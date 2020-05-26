@@ -64,8 +64,9 @@ elif doings ==4:
           time.sleep(stop)
           vk.messages.createChat(user_ids =onl,title= name)
           i+=1
-          print('%s Беседа создана' % i)                                                                                                                          if i == 5:
-             print(' Успешно создано 5 бесед . ')                                                                                                          krutkabeced()
+          print('%s Беседа создана' % i)                                                                                                                          
+          if i == 5:
+             print(' Успешно создано 5 бесед . ')                                                                                                          
 elif doings ==2:
    def joingroups():
       n=1
