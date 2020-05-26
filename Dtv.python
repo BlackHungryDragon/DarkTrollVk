@@ -1,0 +1,76 @@
+import time,colorama
+import vk_api,random
+
+yellow = '\033[33m'
+banner="""
+%s
+        D D n   T T T T
+         D  D      T
+         D  D      T
+         D D       T
+
+     DarkTrollVk
+     proger : HungryDragon
+
+""" % yellow
+
+user=random.randint(1, 2147483647)
+ban2r ="""
+
+    Меню опцией :
+  [1] - Разослать смс
+  [2] - Вступить в группы тематики "Лгбт".
+  [3] - Поставить статус( Которое вы сами хотите)
+  [4] - Создать 5 бесед .
+
+"""
+print(banner)
+token = str (input(' Токен :'))
+print(ban2r)
+doings=int(input(' Номер опции :' ))
+vk_session = vk_api.VkApi(token=token)
+vk = vk_session.get_api()
+
+if doings==1:
+    print(" \n  Напишите сообщение ,которое должно отправиться \n Если оставите поле пустым ,то тогда смс будет 'я гей' ")
+    message=str(input(' Сообщение :'))
+    if message =="":
+       message="Я гей"
+    def sendmas():
+       online=vk.friends.getOnline()
+       for onl in online   :
+          vk.messages.send(user_ids =onl ,message=message,random_id=user)
+          print(" Сообщение отправленно ")
+    sendmas()
+elif doings ==3:
+   print(' Введите сообщение для статуса \n По умолчанию смс - "Я гей" ')
+   status=str(input(' Статус :'))
+   if status == '':
+      status='Я гей'
+   stat= vk.status.set(text=status)
+   print(' Статус успешно установлен',stat)
+elif doings ==4:
+   online=vk.friends.getOnline()
+   onl = random.choice(online)
+   print("\n Введите название беседы \n По умолчанию смс - 'Я гей'" )
+   name =str(input(" Название :"))
+   if name == "":
+      name= "я гей"
+   n=5
+   stop =3
+   stop_kapcha= 10
+   def krutkabeced():
+      for i in  range (n):
+          time.sleep(stop)
+          vk.messages.createChat(user_ids =onl,title= name)
+          i+=1
+          print('%s Беседа создана' % i)                                                                                                                          if i == 5:
+             print(' Успешно создано 5 бесед . ')                                                                                                          krutkabeced()
+elif doings ==2:
+   def joingroups():
+      n=1
+      group= [ 65797052,151233321,128556106,97340700,79970646,60683281]
+      for groups in group:
+         vk.groups.join(group_id=groups)
+         print(" Успешно вступил во все Лгбт группы")
+   joingroups()
