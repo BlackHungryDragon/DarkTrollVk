@@ -22,7 +22,7 @@ user=random.randint(1, 2147483647)
 print(banner)
 token = str (input(' Токен :'))
 print("\n   Меню опцией : \n  \033[37m[\033[33m1\033[37m]  - Массовое смс. \n  \033[37m[\033[33m2\033[37m] - Вступить в группы тематики 'Лгбт' . \n    033[37m[\033[33m3\033[37m] -  Поставить статус( Который  вы сами хотите).\n   \033[37m[\033[33m4\033[37m] - Создать 5 бесед . \n   \033[37m[\033[33m5\033[37m] - Спам постами.")           
-doings=int(input(Fore.YELLOW+' Номер опции :' )
+doings=int(input(Fore.YELLOW+' Номер опции :' ))
 vk_session = vk_api.VkApi(token=token)
 vk = vk_session.get_api()
 
@@ -61,9 +61,9 @@ elif doings ==4:
           time.sleep(stop)
           vk.messages.createChat(user_ids =onl,title= name)
           i+=1
-          print('%s. Беседа создана' % i)                                                                                                              >
+          print('%s. Беседа создана' % i)                                                                                                              
           if i == 5:
-             print(' Успешно создано 5 бесед . ')                                                                                                      >
+             print(' Успешно создано 5 бесед . ')                                                                                                      
 elif doings ==2:
    def joingroups():
       n=1
