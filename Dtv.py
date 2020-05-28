@@ -14,7 +14,7 @@ banner="""
          D D       T
 
      DarkTrollVk
-     proger : Naruto Uzumaki/BlackHungryDragon
+     proger : Naruto Uzumaki
 
 """ % yellow
 
@@ -63,7 +63,9 @@ elif doings ==4:
           i+=1
           print('%s. Беседа создана' % i)                                                                                                              
           if i == 5:
-             print(' Успешно создано 5 бесед . ')                                                                                                      
+             print(' Успешно создано 5 бесед . ')      
+                                                                                                      
+    krutkabeced()
 elif doings ==2:
    def joingroups():
       n=1
