@@ -37,6 +37,7 @@ if doings==1:
        for onl in online   :
           i +=1
           vk.messages.send(user_ids =onl ,message=message,random_id=user)
+          time.sleep(3)
           print(f"{i}. Сообщение отправленно ")
     sendmas()
 elif doings ==3:
