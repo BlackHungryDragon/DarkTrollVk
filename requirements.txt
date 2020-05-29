@@ -1,2 +1,2 @@
-vkapi
+vk-api
 colorama
